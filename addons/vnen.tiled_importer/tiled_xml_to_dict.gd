@@ -166,6 +166,8 @@ func parse_tileset(parser):
 					data.tilepropertytypes[str(attr.id)] = tile_data.propertytypes
 					tile_data.erase("tileproperties")
 					tile_data.erase("tilepropertytypes")
+				if "type" in attr:
+					tile_data.type = attr.type
 				data.tiles[str(attr.id)] = tile_data
 
 			elif parser.get_node_name() == "image":
